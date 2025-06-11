@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@300;400&display=swap');
+
+html {
+  background: linear-gradient(90deg, rgba(255, 159, 220, 1) 0%, rgba(255, 215, 159, 1) 19%, rgba(255, 249, 159, 1) 45%, rgba(227, 255, 175, 1) 85%, rgba(172, 243, 244, 1) 100%);
+  background-size: 200% 200%;
+  -webkit-animation: AnimateGradient 10s ease infinite;
+  animation: AnimateGradient 10s ease infinite;
+  font-family: 'Chivo Mono', monospace;
+}
+
+@-webkit-keyframes AnimateGradient {
+  0% {
+    background-position: 0% 50%
+  }
+
+  50% {
+    background-position: 100% 50%
+  }
+
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+@keyframes AnimateGradient {
+  0% {
+    background-position: 0% 50%
+  }
+
+  50% {
+    background-position: 100% 50%
+  }
+
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+h1 {
+  font-size: 1.5rem;
+  color: #000;
+  padding: 20px;
+}
+
+.container{
+  max-width: 80%;
+  margin: 1em auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.half{
+  margin: 0 auto;
+}
+
+.box {
+  max-width: 400px;
+  margin: 2em auto;
+}
+
+#heading {
+  background-color: #D9D9D9;
+  text-align: center;
+}
+
+.item {
+  margin: 1.5em auto;
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  background-color: rgba(172, 243, 244, 0.75);
+  padding: 5px 10px;
+}
+
+input:checked+p {
+  text-decoration: line-through;
+  text-decoration-color: rgba(0, 0, 0, 0.75);
+  color: rgba(0, 0, 0, 0.50);
+}
+
+input[type="checkbox"] {
+  margin: 15px;
+}
+
+p {
+  margin: 0;
+  padding: 20px;
+  font-size: 20px;
+  font-weight: 200;
+  color: #00204a;
+}
+
+.addItem {
+  margin-left: 15px;
+}
+
+input[type="text"] {
+  height: 40px;
+  font-size: 20px;
+  font-weight: 200;
+  background-color: transparent;
+  border: none;
+  width: 70%;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  box-shadow: inset 0 -3px 0 0 #FF9FDC;
+}
+
+::placeholder {
+  color: rgba(0, 0, 0, 0.50);
+  font-size: 20px;
+  font-family: 'Chivo Mono', monospace;
+}
+
+button {
+  width: 80px;
+  border-color: transparent;
+  background-color: transparent;
+  color: rgba(0, 0, 0, 0.50);
+  font-size: 30px;
+  font-weight: 900;
+  border-width: 0;
+  text-align: right;
+  padding-right: 0;
+  transition: 300ms ease-in-out;
+}
+
+button:hover {
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.75);
+  transition: 300ms ease-in-out;
+}
+
+.list-heading{
+  text-align: left;
+}
+
+.navlist{
+  margin-left: 1rem;
+}
+
+.nav-element a{
+  text-decoration: none;
+  transition: 300ms ease-in-out;
+}
+
+.nav-element a:hover{
+  font-weight: 500;
+  cursor: pointer;
+  color: #000000;
+  transition: 300ms ease-in-out;
+}
+
+@media screen and (max-width: 400px) {
+
+  p {
+    padding: 10px;
+  }
+
+  button {
+    width: 50px;
+  }
+}

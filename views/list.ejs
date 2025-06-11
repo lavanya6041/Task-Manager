@@ -1,0 +1,55 @@
+<%- include("header") -%> 
+
+<div class="container">
+    <div class="half">
+        <div class="box" style="margin-top: 0;">
+            <h1 id="heading"> <%= listTitle %> </h1>
+        </div>
+        
+        <div class="box">
+            <% newListItems.forEach((item)=>{ %> 
+        
+                <form action="/delete" method="post">
+                    <div class="item">
+                        <input type="checkbox" name="checkbox" value="<%= item._id %>" onchange="this.form.submit()">
+                        <p><%= item.name %></p>
+                    </div>
+                    <input type="hidden" name="listName" value="<%= listTitle %>"></input>
+                </form>
+                
+            <% }) %> 
+        
+            <div class="item">
+                <form action="/" method="post" class="addItem">
+                    <input type="text" name="newItem" id="newItem" placeholder="Type to add..." autocomplete="off">
+                    <button type="submit" name="list" value="<%= listTitle %>">+</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="half">
+        
+        <h1 id="list-heading">Your Lists:</h1>
+        
+        <nav class="navbar">
+            <ol class="navlist">
+                <li class="nav-element"><p><a href="/">Default</a></p></li>
+
+                <% lists.forEach((item)=>{ %>
+                    <li class="nav-element"><p><a href="/<%= item %>"><%= item %></p></a></li>
+                <% }) %>
+
+            </ol>
+
+            <form action="/create" method="post" class="addItem">
+                <input type="text" name="newList" id="newItem" placeholder="Create/Go to..." autocomplete="off">
+                <button type="submit" name="list">+</button>
+            </form>
+        </nav>
+    </div>
+
+</div>
+
+
+<%- include("footer") -%> 
